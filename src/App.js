@@ -1,23 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import RenderPosts from "./components/RenderPosts";
+import "./App.css";
+import Home from "./components/Home";
+import Counter from "./components/Counter";
+import User from "./components/User";
+import Post from "./components/Post";
+import Layout from "./Layout";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <Layout>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/user-posts" element={<RenderPosts />} />
+            <Route path="/post/:id?" element={<Post />} />
+            <Route path="/counter" element={<Counter />} />
+            <Route path="/user/:id" element={<User />} />
+            {/* Add more routes for other components */}
+          </Routes>
+        </Layout>
+      </Router>
     </div>
   );
 }
