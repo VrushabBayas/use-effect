@@ -11,6 +11,7 @@ import AboutEffect from "./components/AboutUseEffect";
 
 import "./App.css";
 import InterviewOne from "./components/ReactInterview1";
+import Epam from "./components/Epam";
 
 function App() {
   return (
@@ -18,8 +19,9 @@ function App() {
       <Router>
         <Layout>
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/effect" element={<AboutEffect />} />
+            {/* <Route path="/" element={<Home />} /> */}
+            <Route path="/" element={<Epam />} />
+            {/* <Route path="/effect" element={<AboutEffect />} /> */}
             <Route exact path="/inrerview/:id" element={<InterviewOne />} />
             <Route path="/user-posts" element={<RenderPosts />} />
             <Route path="/post/:id?" element={<Post />} />

@@ -5,10 +5,10 @@ export default function Home() {
   return (
     <>
       <ul>
-        <li>
+        {/* <li>
           {" "}
           <Link to="/effect">About Effect</Link>
-        </li>
+        </li> */}
         <li>
           <Link to="/inrerview/1">React Coding Interview One</Link>
         </li>
